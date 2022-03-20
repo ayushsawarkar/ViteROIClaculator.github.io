@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <meta name="viewport" content="width-=device-width,initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <title>Roi calculator</title>
+        <script type="text/javascript">
+            function toggle_visibility(id) {
+               var e = document.getElementById(id);
+               if(e.style.display == 'none')
+                 { e.style.display = 'block';
+                  document.getElementById('replace-me').innerText = "Hide Detail";
+                  document.getElementById('imgs').style.transform = "rotateY(180deg)";
+                }
+               else
+               {
+                  e.style.display = 'none';
+                  document.getElementById('replace-me').innerText = "Show Detail";
+                  document.getElementById('imgs').style.transform = "rotate(180deg)";
+               }
+            }    
+
+            function myfuc(id) {
+               let text = document.getElementById(id).innerText;
+
+               if(text=='CAKE')
+                 {
+                  document.getElementById('replace').innerText = "USD";
+                }
+               else
+               {
+                  document.getElementById('replace').innerText = "CAKE";
+               }
+            }    
+
+
+                    function buttonFunction(btn) {
+                        btn.style.backgroundColor = "#FFF380";
+                        btn.style.border="1px solid #FFDB58";
+                        btn.style.color="Black";
+                    }
+        </script>
+    </head>
+    <body>
+        <div class="card">
+            <div class="content">
+                <div class="heading">
+                <p>ROI Calculator</p>
+                </div>
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="usd_cake">
+            <div class="cake">
+                <ul>
+                    <li>CAKE</li>
+                    <li>
+                <label class="switch" >
+                  <input type="checkbox"onclick="myfuc('replace'); ">
+                  <span class="slider round"></span>
+                </label></li>
+                    <li>USD</li>
+                    </ul>
+            </div></div>
+
+            <div class="text_container">
+                <div class="first_input"><input type="text" class="form__input" id="name" required="" /></div>
+                <div class="text_USD" id="first"><p id="replace">CAKE</p></div>
+
+            </div>
+            <div class="text_down">
+                <p>~$20.82</p>
+            <ul>
+                <li style="background: #FFF9AA;">USE BALANCE</li>
+                <li>$1000</li>
+                <li>$100</li>
+            </ul>
+            </div>
+            <div class="timeframe">
+                <p>
+                Timeframe</p>
+                <div class="timeframe_btn">
+                    <button class="button button1" onclick="buttonFunction(this)" style=" background: #FFF380; border: 1px solid#FFDB58; color: black;">1 Day</button>
+                    <button class="button button2" onclick="buttonFunction(this)">7 Days</button>
+                    <button class="button button1" onclick="buttonFunction(this)">30 Days</button>
+                    <button class="button button2" onclick="buttonFunction(this)">1 Year</button>
+                    <button class="button button1" onclick="buttonFunction(this)">5 Years</button>
+                </div>
+            </div>
+            <p>
+               <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            Enable Accelerated APY</p>
+            
+            <div class="select_tier">
+                <p>Select tier</p>
+            </div>
+            <div class="Enable_btn">
+                <button class="button button1" onclick="buttonFunction(this)">Tier 1</button>
+                <button class="button button2" onclick="buttonFunction(this)">Tier 2</button>
+                <button class="button button1" onclick="buttonFunction(this)" style=" background: #FFF380; border: 1px solid#FFDB58; color: black;">Tier 3</button>
+                <button class="button button2" onclick="buttonFunction(this)">Tier 4</button>
+                <button class="button button1" onclick="buttonFunction(this)">Tier 5</button>
+            </div>
+            <div class="secondtext">
+                <p>ROI at Current Rates</p>
+            </div>
+            <div class="text_container">
+            <i class="fas fa-pen"></i>
+            <input type="text" class="form__input" id="name"  required="" />
+            <div class="text_USD" id="text_usd">USD</div>
+            </div>
+            <div class="secondtext">
+                <P>~3 CAKE + 10 DON</P>
+            </div>
+            <div class="downbutton">
+                <button class="apply">Apply</button>
+                <button class="cancel">Cancel</button>
+            </div>
+            <div class="detail">
+                <div class="show_detail"><a href="#" onclick="toggle_visibility('foo');"><p id="replace-me" onclick="myFunction('replace-me')">Hide Details</p><img id="imgs" src="download.png"></a></div>
+               <div id="foo">
+                    <div class="APY">
+                        <a>APY</a>
+                    </div>
+                    <div class="perce">
+                        <a>63.34%</a>
+                    </div>
+                    <ul>
+                <li>
+                    Calculated based on current rates
+                </li>
+                <li>
+                    All figure are estimates provided for your convenience only, and by no means represent guaranteed returns.
+                </li>
+                </ul>
+                </div>
+        </div>
+    </body>
+</html>
